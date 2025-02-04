@@ -1,0 +1,78 @@
+### Problem Explanation: Breaking Into Atoms
+
+You are given a set **X** containing integers from **0** to **n-1**. Additionally, there are **m** subsets, each containing some elements from **X**. 
+
+Your task is to **partition** the set **X** into **atoms**. An atom is a subset of **X** such that:
+1. For each of the given subsets, either:
+   - The atom is entirely contained within that subset.
+   - The atom and the subset do not overlap (they have no common elements).
+
+You need to find the **minimum number of such atoms** required to cover all of **X** where:
+- Every element in **X** belongs to exactly one atom.
+- No two atoms share any elements.
+
+### Input:
+1. The first line contains an integer **t**, the number of test cases.
+2. For each test case:
+   - You are given two integers **n** and **m**:
+     - **n** is the size of the set **X** (which contains elements from 0 to n-1).
+     - **m** is the number of subsets.
+   - The next **m** lines describe the subsets:
+     - Each line starts with an integer **v_i**, the size of the **i-th** subset, followed by **v_i** integers, which are the elements of that subset.
+
+### Output:
+For each test case, you need to output the minimum number of atoms required to partition **X** while satisfying the constraints.
+
+### Example:
+
+#### Input:
+```
+2
+5 2
+3 0 1 2
+3 2 3 4
+4 3
+2 0 1
+2 1 2
+2 2 3
+```
+
+#### Output:
+```
+4
+3
+```
+
+### Explanation:
+
+- **Test Case 1**:
+  - **X = {0, 1, 2, 3, 4}**
+  - The first subset contains **{0, 1, 2}** and the second subset contains **{2, 3, 4}**.
+  - The partition can be made using the following atoms:
+    - **{0}**
+    - **{1}**
+    - **{2}**
+    - **{3, 4}**
+  - So, the minimum number of atoms is **4**.
+
+- **Test Case 2**:
+  - **X = {0, 1, 2, 3}**
+  - The first subset contains **{0, 1}**, the second contains **{1, 2}**, and the third contains **{2, 3}**.
+  - The partition can be made using the following atoms:
+    - **{0}**
+    - **{1}**
+    - **{2, 3}**
+  - So, the minimum number of atoms is **3**.
+
+### Key Ideas:
+- The problem asks you to find the smallest number of partitions (atoms) where each atom meets the condition of being inside or disjoint with each subset.
+- The goal is to cover **X** using the fewest possible subsets (atoms) while ensuring that no two atoms overlap.
+
+### Constraints:
+- The size of **X** (n) is at most **100**.
+- The number of subsets (m) is at most **30**.
+- You are guaranteed that each element of **X** appears in at least one of the subsets.
+
+### Solution Approach:
+- You need to use a strategy to break down the set **X** into minimal, non-overlapping subsets (atoms).
+- This may involve understanding how the subsets overlap and finding a way to group elements into distinct atoms that cover the entire set **X**.

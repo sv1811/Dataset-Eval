@@ -1,0 +1,72 @@
+### Problem Explanation: c8kbf and Tree
+
+Chef c8kbf has a tree with **N nodes**. The tree has edges connecting nodes, each with a specific weight. The goal is to find four nodes **a, b, c, d** in the tree that satisfy the following conditions:
+
+1. **a < b** and **c < d**.
+2. The **XOR** of the edge weights between nodes **a** and **b** is the same as the **XOR** of the edge weights between nodes **c** and **d**.
+3. The pairs **(a, b)** and **(c, d)** must be different, meaning that at least one of the pairs must be different (i.e., **a ≠ c** or **b ≠ d**).
+
+If such four nodes can be found, you need to output the nodes **a, b, c, d**. If no such nodes exist, you must output **-1**.
+
+### XOR of a Path:
+The XOR of a path between two nodes is the result of XORing the weights of all edges in that path. For example, if the path goes through edges with weights 1, 2, and 3, then the XOR of the path will be `1 ^ 2 ^ 3`.
+
+### Input:
+1. **T** test cases.
+2. For each test case:
+   - The number **N**, which is the number of nodes in the tree.
+   - **N-1** lines describing the edges, each line contains:
+     - Two nodes **u** and **v** connected by an edge with weight **w**.
+
+### Output:
+- For each test case, output **a, b, c, d** (four integers), where the XOR of the path from **a** to **b** is equal to the XOR of the path from **c** to **d**.
+- If no such four nodes exist, output **-1**.
+
+### Key Ideas:
+1. The tree is undirected, meaning if there's a path from **a** to **b**, there's also a path from **b** to **a**.
+2. The XOR path value for any two nodes can be calculated by following the path and XORing the edge weights.
+3. The problem asks to find two paths with the same XOR value, but with different pairs of nodes.
+
+### Constraints:
+- The number of nodes **N** can be as large as 100,000, and the total number of nodes across all test cases won't exceed **300,000**.
+- The number of edges **M** can be up to 1,000,000.
+
+### Example:
+
+#### Input:
+```
+3
+4
+1 2 1
+2 3 2
+2 4 3
+4
+1 2 2
+2 3 4
+2 4 8
+3
+1 2 5
+2 3 0
+```
+
+#### Output:
+```
+1 2 1 3
+-1
+1 2 1 3
+```
+
+### Explanation:
+- **Test Case 1**:
+  - Path between nodes **1 and 4** has XOR value `1 ^ 3 = 2`.
+  - Path between nodes **3 and 2** also has XOR value `2`.
+  - So, the answer is **1 2 1 3**.
+  
+- **Test Case 2**:
+  - No such pairs of nodes with equal XOR values, so the answer is **-1**.
+
+- **Test Case 3**:
+  - The answer can be **1 2 1 3** because the XOR values of both paths are the same.
+
+### Conclusion:
+The problem requires you to find four nodes in a tree such that the XOR values of paths between them are equal. If no such pairs exist, return **-1**. This is a graph-related problem with XOR operations, and the constraints mean we need to be efficient in searching for these paths.

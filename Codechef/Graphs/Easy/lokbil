@@ -1,0 +1,58 @@
+### Problem Explanation: Most Popular Friend
+
+Chef and his cook-herd are excited about spreading knowledge through Facebook, and they come up with the idea of dividing Facebook users into small groups of friends. They want to identify the "most popular friend" in each group.
+
+The "notoriety" of a friend is determined by the average distance between that friend and all the other friends in the group. The "distance" between two friends is the minimum number of profile visits required to go from one friend to the other, considering the friend list of each user.
+
+### Key Concepts:
+- **Friendship Distance**: This is the minimum number of profile visits needed to reach one friend from another, following the friend connections. Each user can only visit profiles from their own friend list.
+  
+  For example:
+  - If **A** is friends with **B**, the distance between them is **1**.
+  - If **A** is friends with **B**, and **B** is friends with **C**, then the distance between **A** and **C** is **2**.
+  - If **C** is friends with **D**, and **D** is friends with **E**, the distance between **A** and **E** is **3**.
+
+- **Notoriety**: This is the average distance between a friend and all other friends in the group, including the friend themselves.
+
+- The goal is to find the friend with the least notoriety, i.e., the most "popular" friend in each group. If there are multiple friends with the same notoriety, choose the one with the lowest number label.
+
+### Problem Input:
+1. The first line gives the number of **groups**.
+2. For each group:
+   - The first line contains the number of **friends** in that group.
+   - The next lines describe the friend list for each person (the friend list of the i-th friend).
+
+### Problem Output:
+For each group:
+- Output the label of the most popular friend, followed by the average distance from this friend to all other friends, rounded to **six decimal places**.
+
+### Example:
+
+#### Input:
+```
+1
+6
+3
+5
+1 4
+3 5 6
+2 4 6
+4 5
+```
+
+#### Output:
+```
+4 1.166667
+```
+
+### Explanation:
+- There is 1 group with 6 friends.
+- The connections between the friends are described, showing which friends are connected to whom.
+- The task is to find the friend with the least notoriety (average distance to all other friends).
+- In this case, the most popular friend is friend number **4** with an average distance of **1.166667**.
+
+### Constraints:
+- Each group has at least one friend and the friendships are bidirectional.
+- The number of friends in each group is at most **100**, and the number of groups is at most **100**.
+
+The problem involves finding the most popular friend by calculating the shortest paths between all friends and computing the average distance for each friend.

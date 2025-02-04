@@ -1,0 +1,59 @@
+### Sridhar Likes Travelling Problem Explanation
+
+Sridhar is a traveler who loves to plan his trips carefully. This time, he is planning to visit several cities in Europe, and he has written down his travel plan in the following format:
+
+- If he wants to travel directly from city **A** to city **B** and the cost is **C** dollars, he writes:
+  
+  **A B C**
+
+Each of his travels between two cities is written down on a separate card, and he plans to visit **N** cities in total. However, just before starting his trip, all the cards got shuffled, and now he needs help to figure out the **correct order** of the cards and calculate the **total cost** of his journey.
+
+### Problem Input
+- The first line gives the number **T**, the number of test cases.
+- For each test case, the first line contains **N**, the number of cities Sridhar wants to visit.
+- The next **N-1** lines contain details of a card (shuffled). Each card contains:
+  - **A** (the name of city A),
+  - **B** (the name of city B),
+  - **C** (the cost of traveling from city A to city B).
+  
+### Problem Output
+- For each test case, output the **N-1 cards in the correct order**.
+- Finally, print the **total cost** of the journey in the following format:
+
+  **TotalCost:X $**
+
+Where **X** is the total cost of the journey.
+
+### Example
+
+#### Input
+```
+1
+5
+Warsaw Kiev 120
+Madrid Paris 100
+Munich Warsaw 150
+Paris Munich 200
+```
+
+#### Output
+```
+Madrid Paris 100
+Paris Munich 200
+Munich Warsaw 150
+Warsaw Kiev 120
+TotalCost:570 $
+```
+
+### Explanation
+- In this case, Sridhar starts in **Madrid** and moves to **Paris**, then **Munich**, **Warsaw**, and finally **Kiev**.
+- The correct order of travel is:
+  - **Madrid → Paris → Munich → Warsaw → Kiev**
+  - The total cost of this journey is 100 + 200 + 150 + 120 = 570.
+
+### Problem Constraints
+- **1 ≤ T ≤ 10** (Number of test cases)
+- **1 ≤ N ≤ 5000** (Number of cities)
+- **1 ≤ length of Ai, Bi ≤ 50** (Length of city names)
+- **1 ≤ Ci ≤ 1000** (Cost range)
+- City names are case-sensitive and no two cities have the same name.

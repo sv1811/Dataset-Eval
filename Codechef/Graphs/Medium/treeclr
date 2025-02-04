@@ -1,0 +1,62 @@
+### Problem Explanation: Tree Coloring
+
+You are given a **tree** with **N** nodes. Each node can be coloured using one of the **C** available colours. Your task is to find the number of ways to colour the tree such that:
+
+1. **All nodes in any path of length at most 2 must have distinct colours**.
+   - A path between two nodes is defined as the number of edges in the shortest path connecting them. So, a path of length 0 means the node itself, a path of length 1 means the node and its immediate neighbor, and a path of length 2 means a sequence of 3 nodes connected in a chain.
+
+Since the number of valid colourings can be very large, you are required to print the answer **modulo (10^9 + 7)**.
+
+### Input:
+
+1. The first line contains two integers, **N** and **C**:
+   - **N** is the number of nodes in the tree.
+   - **C** is the number of available colours.
+   
+2. The next **(N - 1)** lines describe the edges in the tree. Each line contains two integers, **U** and **V**, meaning there is an edge between node **U** and node **V**.
+
+### Output:
+
+You need to output the number of ways to colour the tree such that the conditions are satisfied, modulo **(10^9 + 7)**.
+
+### Explanation:
+
+- **Example**:
+
+#### Input:
+```
+3 3
+1 2
+1 3
+```
+
+#### Output:
+```
+6
+```
+
+Here, the tree has 3 nodes and 3 colours. The valid colourings for the nodes are the ones where no two nodes in a path of length 2 (a sequence of three nodes) share the same colour.
+
+- In this case, the valid colourings are:
+
+  1. Colour node 1 with colour 1, node 2 with colour 2, and node 3 with colour 3.
+  2. Colour node 1 with colour 1, node 2 with colour 3, and node 3 with colour 2.
+  3. Colour node 1 with colour 2, node 2 with colour 1, and node 3 with colour 3.
+  4. Colour node 1 with colour 2, node 2 with colour 3, and node 3 with colour 1.
+  5. Colour node 1 with colour 3, node 2 with colour 1, and node 3 with colour 2.
+  6. Colour node 1 with colour 3, node 2 with colour 2, and node 3 with colour 1.
+
+Thus, there are **6** valid ways to colour the tree, which is the output.
+
+### Constraints:
+- **N** can be as large as **1,000,000**, so the solution must be efficient.
+- **C** can also be as large as **1,000,000**.
+- **U** and **V** are node indices between 1 and **N**.
+
+### Key Points:
+- The tree has **N** nodes and **N-1** edges, and the tree is undirected.
+- You need to ensure that no two nodes in a path of length 2 (which involves three nodes in total) share the same colour.
+- The answer must be printed modulo **(10^9 + 7)** because the result can be very large.
+
+### Approach:
+- This problem involves counting valid colourings, and you will likely need to use dynamic programming or depth-first search (DFS) to explore the tree and track valid colourings for each node while considering the path constraints.
