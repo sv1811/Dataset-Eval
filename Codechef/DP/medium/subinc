@@ -1,0 +1,51 @@
+**Count Subarrays**  
+
+You are given an array **A** of **N** integers. A **subarray** is a contiguous sequence of elements within **A**.  
+
+A subarray **A[i, j]** (where **1 ≤ i ≤ j ≤ N**) is **non-decreasing** if:  
+\[
+A[i] \leq A[i+1] \leq A[i+2] \leq ... \leq A[j]
+\]  
+Your task is to count the total number of such **non-decreasing subarrays** in the array.  
+
+### **Input Format**  
+- The first line contains an integer **T**, the number of test cases.  
+- Each test case starts with an integer **N**, the number of elements in the array.  
+- The next line contains **N** space-separated integers, the elements of array **A**.  
+
+### **Output Format**  
+For each test case, print a single integer—the total count of non-decreasing subarrays.  
+
+### **Constraints**  
+1 ≤ T ≤ 5  
+1 ≤ N ≤ 10⁵  
+1 ≤ A[i] ≤ 10⁹  
+
+### **Subtasks**  
+- **Subtask 1 (20 points):** 1 ≤ N ≤ 100  
+- **Subtask 2 (30 points):** 1 ≤ N ≤ 1000  
+- **Subtask 3 (50 points):** Original constraints  
+
+### **Example**  
+
+#### **Input:**  
+```
+2  
+4  
+1 4 2 3  
+1  
+5  
+```  
+
+#### **Output:**  
+```
+6  
+1  
+```  
+
+### **Explanation:**  
+1. In the first test case, the valid non-decreasing subarrays are:  
+   **A[1,1]**, **A[1,2]**, **A[2,2]**, **A[3,3]**, **A[3,4]**, **A[4,4]**.  
+   Total = **6**.  
+2. In the second test case, the only possible subarray is **A[1,1]**.  
+   Total = **1**.

@@ -1,0 +1,43 @@
+**Alternating Subarray Prefix**  
+
+You are given an array **A** of **N** non-zero integers. A **subarray** is called **alternating** if every two adjacent elements have different signs (one is positive, the other is negative).  
+
+For each index **x** from **1 to N**, find the length of the **longest alternating subarray** that starts at index **x**. That is, determine the maximum **y** (≥ x) such that the subarray **Ax..y** is alternating. The length of this subarray is **y - x + 1**.  
+
+### **Input Format**  
+- The first line contains an integer **T**, the number of test cases.  
+- Each test case starts with an integer **N**, the number of elements in the array.  
+- The next line contains **N** space-separated integers, the elements of array **A**.  
+
+### **Output Format**  
+For each test case, print **N** space-separated integers. The **i-th** integer represents the length of the longest alternating subarray starting at index **i**.  
+
+### **Constraints**  
+1 ≤ T ≤ 10  
+1 ≤ N ≤ 10⁵  
+-10⁹ ≤ Ai ≤ 10⁹  
+
+### **Example**  
+
+#### **Input:**  
+```
+3  
+4  
+1 2 3 4  
+4  
+1 -5 1 -5  
+6  
+-5 -1 -1 2 -2 -3  
+```  
+
+#### **Output:**  
+```
+1 1 1 1  
+4 3 2 1  
+1 1 3 2 1 1  
+```  
+
+### **Explanation:**  
+1. In the first test case, no two consecutive elements have different signs, so each alternating subarray consists of only one element.  
+2. In the second test case, every element alternates in sign, so the longest alternating subarrays start with lengths **4, 3, 2, and 1**.  
+3. In the third test case, the longest alternating subarray starting at index **3** has a length of **3** (A[3..5] = -1, 2, -2).
