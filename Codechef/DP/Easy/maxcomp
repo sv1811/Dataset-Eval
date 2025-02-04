@@ -1,0 +1,52 @@
+**Event Organizer**  
+
+Chef Po advertised event organizing services online and received multiple orders from different organizations. Each order specifies the start time, end time, and the compensation for the event.  
+
+The weekend consists of 48 hours, with:  
+- **Saturday** represented as hours 0 to 23  
+- **Sunday** represented as hours 24 to 48  
+
+Chef can only conduct events if he is available for the entire duration. He cannot take overlapping events, but if one event ends exactly when another begins, he can conduct both. His goal is to maximize the total compensation by selecting the best combination of non-overlapping events.  
+
+**Input Format**  
+The first line contains an integer **T**, the number of test cases. Each test case starts with an integer **N**, the number of event orders. The next **N** lines contain three integers:  
+- **Start time** (Si)  
+- **End time** (Ei)  
+- **Compensation** (Ci)  
+
+**Output Format**  
+For each test case, output a single integer, representing the maximum compensation Chef Po can earn.  
+
+**Constraints**  
+1 ≤ T ≤ 10  
+1 ≤ N ≤ 2000  
+0 ≤ Si < Ei ≤ 48  
+0 ≤ Ci ≤ 10⁶  
+
+**Example**  
+
+*Input:*  
+```
+2  
+4  
+1 2 100  
+2 3 200  
+3 4 1600  
+1 3 2100  
+3  
+1 10 2000  
+2 5 100  
+6 9 400  
+```  
+
+*Output:*  
+```
+3700  
+2000  
+```  
+
+**Explanation**  
+
+In the first test case, the best choice is to take event 3 (1600) and event 4 (2100), giving a total of **3700**.  
+
+In the second test case, event 1 alone gives **2000**, which is better than taking events 2 and 3 together (total 500).
