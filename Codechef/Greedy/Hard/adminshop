@@ -1,0 +1,59 @@
+### Problem Explanation: Admins and Shopping
+
+There are **N** shops in a mall, and each shop has a certain capacity, meaning only a specific number of people can be in the shop at any given time. There are **X** admins who need to visit each of the **N** shops exactly once. Each admin spends one hour in each shop.
+
+The task is to find the minimum time required (in hours) for all admins to visit all the shops. The admins can visit the shops in any order, and at any point, some admins might not be shopping and could be idle.
+
+### Input:
+
+1. **T**: The number of test cases.
+2. For each test case:
+   - Two integers: **N** (number of shops) and **X** (number of admins).
+   - A list of **N** integers: **A1, A2, ..., An**, representing the capacity of each shop (how many people can visit each shop at once).
+
+### Output:
+
+For each test case, output the minimum number of hours required for all admins to complete their shopping.
+
+### Example:
+
+#### Input:
+```
+3
+2 3
+3 3
+4 2
+1 2 3 4
+1 6
+2
+```
+
+#### Output:
+```
+2
+4
+3
+```
+
+### Explanation:
+
+1. **Test case 1**: 
+   - There are 2 shops and 3 admins. 
+   - In the first hour, all 3 admins can visit the first shop (since its capacity is 3). 
+   - In the second hour, all 3 admins can visit the second shop. 
+   - Thus, it takes **2 hours** in total.
+
+2. **Test case 2**:
+   - There are 4 shops and 2 admins.
+   - In the first hour, Admin 1 can visit Shop 1, and Admin 2 can visit Shop 4.
+   - In the second hour, Admin 1 visits Shop 2, and Admin 2 visits Shop 3.
+   - This continues for 4 hours in total.
+
+3. **Test case 3**:
+   - There is 1 shop and 6 admins, but the shop can only hold 2 admins at a time.
+   - The admins can visit the shop in groups, and it takes **3 hours** for all admins to visit the shop.
+
+### Key Points:
+- The admins can visit the shops in any order.
+- The capacity of each shop limits how many admins can visit the shop at the same time.
+- Some admins might be idle if there are fewer shops than admins.
