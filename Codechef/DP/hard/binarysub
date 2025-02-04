@@ -1,0 +1,54 @@
+**Binary Substitution**  
+
+Chef has a **binary string** consisting of **0s and 1s**. He can perform the following substitutions:  
+
+- Replace **"01"** → **"a"**  
+- Replace **"10"** → **"b"**  
+- Replace **"010"** → **"ab"**  
+- Replace **"101"** → **"ba"**  
+
+Since the order of operations matters, Chef can end up with **different possible original binary strings** that produce the same final string containing only **a** and **b**.  
+
+Given the **final string**, Chef wants to determine the **number of possible binary strings** that could have led to it. Since the answer can be large, print the result **modulo 998244353**.  
+
+### **Input Format**  
+- The first line contains an integer **T** — the number of test cases.  
+- Each test case consists of a single line containing the **final string S**, consisting only of **a** and **b**.  
+
+### **Output Format**  
+For each test case, output a single integer — the number of different possible binary strings that could lead to **S**, **mod 998244353**.  
+
+### **Constraints**  
+1 ≤ **T** ≤ 5 × 10⁴  
+1 ≤ **|S|** ≤ 10⁵  
+The sum of **|S|** across all test cases does not exceed **5 × 10⁵**.  
+
+### **Example**  
+
+#### **Input:**  
+```
+3  
+ab  
+aa  
+abb  
+```  
+
+#### **Output:**  
+```
+2  
+1  
+2  
+```  
+
+### **Explanation:**  
+1. **"ab"**  
+   - Possible binary strings: **"0110"**, **"010"**  
+   - Answer: **2**  
+
+2. **"aa"**  
+   - Only possible binary string: **"0101"**  
+   - Answer: **1**  
+
+3. **"abb"**  
+   - Possible binary strings: **"011010"**, **"01010"**  
+   - Answer: **2**  
